@@ -5,7 +5,7 @@
 - [x] 1.3 準備環境變數文件範例（.env.example）說明需要哪些 API keys（僅供 Netlify Functions 使用）
 - [x] 1.4 安裝相依套件（weather API client、geocoding library、sun position calculator）
 - [x] 1.5 建立基本專案結構（components、services、styles 目錄）
-- [ ] 1.6 安裝並設定 TailwindCSS
+- [x] 1.6 安裝並設定 TailwindCSS
 - [ ] 1.7 設定 ESLint 與 TypeScript ESLint（如使用 TypeScript）
 - [ ] 1.8 設定 Prettier 並整合至 ESLint
 - [ ] 1.9 設定單元測試框架（Vitest 或 Jest）與 Testing Library
