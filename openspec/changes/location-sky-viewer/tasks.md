@@ -5,15 +5,16 @@
 - [x] 1.3 準備環境變數文件範例（.env.example）說明需要哪些 API keys（僅供 Netlify Functions 使用）
 - [x] 1.4 安裝相依套件（weather API client、geocoding library、sun position calculator）
 - [x] 1.5 建立基本專案結構（components、services、styles 目錄）
-- [ ] 1.6 設定 ESLint 與 TypeScript ESLint（如使用 TypeScript）
-- [ ] 1.7 設定 Prettier 並整合至 ESLint
-- [ ] 1.8 設定單元測試框架（Vitest 或 Jest）與 Testing Library
-- [ ] 1.9 設定端對端測試框架（Playwright 或 Cypress）
-- [ ] 1.10 設定 Husky 與 lint-staged 進行 pre-commit 檢查
-- [ ] 1.11 建立測試覆蓋率報告設定（目標 80%+）
-- [ ] 1.12 建立 netlify.toml 部署設定檔模板
-- [ ] 1.13 建立 netlify/functions/ 目錄結構
-- [ ] 1.14 安裝 Netlify Functions 開發相依套件
+- [ ] 1.6 安裝並設定 TailwindCSS
+- [ ] 1.7 設定 ESLint 與 TypeScript ESLint（如使用 TypeScript）
+- [ ] 1.8 設定 Prettier 並整合至 ESLint
+- [ ] 1.9 設定單元測試框架（Vitest 或 Jest）與 Testing Library
+- [ ] 1.10 設定端對端測試框架（Playwright 或 Cypress）
+- [ ] 1.11 設定 Husky 與 lint-staged 進行 pre-commit 檢查
+- [ ] 1.12 建立測試覆蓋率報告設定（目標 80%+）
+- [ ] 1.13 建立 netlify.toml 部署設定檔模板
+- [ ] 1.14 建立 netlify/functions/ 目錄結構
+- [ ] 1.15 安裝 Netlify Functions 開發相依套件
 
 ## 2. 地點選擇功能
 
