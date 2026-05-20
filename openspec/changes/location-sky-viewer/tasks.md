@@ -3,7 +3,7 @@
 - [x] 1.1 使用選定的框架初始化 web 專案（React/Vue/Svelte）
 - [x] 1.2 設定建置工具和開發伺服器
 - [x] 1.3 準備環境變數文件範例（.env.example）說明需要哪些 API keys（僅供 Netlify Functions 使用）
-- [ ] 1.4 安裝相依套件（weather API client、geocoding library、sun position calculator）
+- [x] 1.4 安裝相依套件（weather API client、geocoding library、sun position calculator）
 - [ ] 1.5 建立基本專案結構（components、services、styles 目錄）
 - [ ] 1.6 設定 ESLint 與 TypeScript ESLint（如使用 TypeScript）
 - [ ] 1.7 設定 Prettier 並整合至 ESLint
