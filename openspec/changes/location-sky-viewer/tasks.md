@@ -12,8 +12,8 @@
 - [x] 1.10 設定端對端測試框架（Playwright 或 Cypress）
 - [x] 1.11 設定 Husky 與 lint-staged 進行 pre-commit 檢查
 - [x] 1.12 建立測試覆蓋率報告設定（目標 80%+）
-- [ ] 1.13 建立 netlify.toml 部署設定檔模板
-- [ ] 1.14 建立 netlify/functions/ 目錄結構
+- [x] 1.13 建立 netlify.toml 部署設定檔模板
+- [x] 1.14 建立 netlify/functions/ 目錄結構
 - [ ] 1.15 安裝 Netlify Functions 開發相依套件
 
 ## 2. 地點選擇功能

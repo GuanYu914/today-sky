@@ -1,0 +1,65 @@
+# Netlify 部署設定檔
+
+[build]
+  # 建置命令
+  command = "npm run build"
+  
+  # 建置輸出目錄
+  publish = "dist"
+  
+  # Node.js 版本
+  environment = { NODE_VERSION = "20" }
+
+# 重定向規則 - SPA 路由支援
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Netlify Functions 設定（未來用於 API 代理）
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# 開發伺服器設定
+[dev]
+  command = "npm run dev"
+  port = 5173
+  targetPort = 5173
+  publish = "dist"
+
+# 建置優化
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
+# Headers 設定 - 安全性和快取
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# 環境變數範例（實際值在 Netlify Dashboard 設定）
+# WEATHER_API_KEY = "your_weather_api_key"
+# GEOCODING_API_KEY = "your_geocoding_api_key"
