@@ -8,7 +8,7 @@
 - [x] 1.6 安裝並設定 TailwindCSS
 - [x] 1.7 設定 ESLint 與 TypeScript ESLint（如使用 TypeScript）
 - [x] 1.8 設定 Prettier 並整合至 ESLint
-- [ ] 1.9 設定單元測試框架（Vitest 或 Jest）與 Testing Library
+- [x] 1.9 設定單元測試框架（Vitest 或 Jest）與 Testing Library
 - [ ] 1.10 設定端對端測試框架（Playwright 或 Cypress）
 - [ ] 1.11 設定 Husky 與 lint-staged 進行 pre-commit 檢查
 - [ ] 1.12 建立測試覆蓋率報告設定（目標 80%+）
