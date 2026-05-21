@@ -10,11 +10,12 @@
   # Node.js 版本
   environment = { NODE_VERSION = "20" }
 
-# 重定向規則 - SPA 路由支援
+# 重定向規則 - SPA 路由支援（僅用於 production build）
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
 
 # Netlify Functions 設定（未來用於 API 代理）
 [functions]
@@ -24,9 +25,8 @@
 # 開發伺服器設定
 [dev]
   command = "npm run dev"
-  port = 5173
+  port = 8888
   targetPort = 5173
-  publish = "dist"
 
 # 建置優化
 [build.processing]
