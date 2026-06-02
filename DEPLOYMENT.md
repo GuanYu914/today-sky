@@ -1,6 +1,53 @@
 # Netlify 部署指南
 
-本指南說明如何將 Today Sky 應用程式部署到 Netlify。
+本指南說明如何設定環境變數以及將 Today Sky 應用程式部署到 Netlify。
+
+## 本地開發環境變數設定
+
+### 步驟 1：創建 .env 檔案
+
+在專案根目錄創建 `.env` 檔案（已在 `.gitignore` 中，不會被 commit）：
+
+```bash
+# 複製範例檔案
+cp .env.example .env
+```
+
+### 步驟 2：填入 API Keys
+
+編輯 `.env` 檔案，填入實際的 API keys：
+
+```bash
+# OpenWeatherMap API Key
+OPENWEATHER_API_KEY=你的真實API金鑰
+```
+
+**如何取得 OpenWeatherMap API Key：**
+
+1. 前往 https://openweathermap.org/api
+2. 點擊 "Get API Key" 或 "Sign Up"
+3. 註冊並驗證郵箱
+4. 在 Dashboard 中複製 API Key
+
+### 步驟 3：測試本地開發
+
+```bash
+# 使用 Vite dev server（前端開發，Functions 不可用）
+npm run dev
+
+# 使用 Netlify dev（完整環境，Functions 可用）
+npm run dev:netlify
+```
+
+⚠️ **重要提示：**
+
+- `.env` 檔案僅用於本地開發
+- 絕對不要 commit `.env` 檔案到 Git
+- API keys 會透過 `process.env.OPENWEATHER_API_KEY` 在 Netlify Functions 中存取
+
+---
+
+## Netlify 生產環境部署
 
 ## 前置準備
 
@@ -29,26 +76,42 @@ Netlify 會自動偵測 `netlify.toml` 設定檔，應該會看到：
 
 確認這些設定正確後，點擊 "Deploy site"。
 
-### 3. 設定環境變數
+### 3. 設定環境變數 ⚠️ **重要**
 
-在網站部署後：
+**這是最關鍵的步驟！** Netlify Functions 需要環境變數才能運作。
 
-1. 進入 Site settings → Environment variables
-2. 點擊 "Add a variable"
+#### 在 Netlify Dashboard 設定：
+
+1. 進入你的網站 → **Site configuration** → **Environment variables**
+2. 點擊 **"Add a variable"** 或 **"Add a single variable"**
 3. 新增以下變數：
 
+   | Key                   | Value                       | Scopes     |
+   | --------------------- | --------------------------- | ---------- |
+   | `OPENWEATHER_API_KEY` | 你的 OpenWeatherMap API Key | All scopes |
+
+   **範例畫面：**
+
    ```
-   OPENWEATHER_API_KEY=your_actual_api_key_here
+   Key:   OPENWEATHER_API_KEY
+   Value: da4538454b8ec80197de07264719fe7d
+   Scopes: ✓ All scopes (Production, Deploy previews, Branch deploys)
    ```
 
-   如果使用其他地理編碼服務，也可以新增：
+4. 點擊 **"Create variable"**
+5. 觸發重新部署：
+   - 進入 **Deploys** 頁面
+   - 點擊 **"Trigger deploy"** → **"Deploy site"**
 
-   ```
-   GEOCODING_API_KEY=your_geocoding_api_key_here
-   ```
+#### 驗證環境變數設定：
 
-4. 點擊 "Save"
-5. 觸發重新部署：Deploys → Trigger deploy → Deploy site
+部署完成後，測試 Geocoding Function：
+
+```bash
+curl "https://your-site.netlify.app/.netlify/functions/geocode?q=Tokyo"
+```
+
+如果設定正確，會回傳地點資料。如果看到 `"error": "API key not configured"`，表示環境變數未正確設定。
 
 ### 4. 自訂網域（可選）
 
