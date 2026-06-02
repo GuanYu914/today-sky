@@ -18,7 +18,7 @@
 
 ## 2. 地點選擇功能
 
-- [ ] 2.1 建立 Netlify Function：geocoding API 代理
+- [x] 2.1 建立 Netlify Function：geocoding API 代理
 - [ ] 2.2 建立地點搜尋輸入元件
 - [ ] 2.3 前端調用 Netlify Function 進行地點搜尋（而非直接調用 API）
 - [ ] 2.4 實作帶有區別資訊的搜尋結果顯示
